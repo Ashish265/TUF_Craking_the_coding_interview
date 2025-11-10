@@ -26,3 +26,7 @@ def palindrome(s, i):
 
 print(palindrome("ABCDCBA", 0))
 print(palindrome("TAKE U FORWARD", 0))
+print(palindrome("MADAM", 0))
+print(palindrome("HELLO", 0))
+print(palindrome("RACECAR", 0))
+print(palindrome("PYTHON", 0))
