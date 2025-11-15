@@ -45,7 +45,7 @@ class Solution:
 # Main driver
 def main():
     # Input list
-    nums = [1, 2, 3]
+    nums = [1, 2, 3, 4]
 
     # Create object
     sol = Solution()
