@@ -26,6 +26,26 @@ def findPeakElement(arr):
         return n - 1
     return -1  # No peak found (should not happen for valid input)
 
+
+def findPeakbs(arr):
+    n = len(arr)
+    low, high = 0, n - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        # Check if mid is a peak element
+        if (mid == 0 or arr[mid] >= arr[mid - 1]) and (mid == n - 1 or arr[mid] >= arr[mid + 1]):
+            return mid
+        # If the left neighbor is greater, move to the left half
+        elif mid > 0 and arr[mid - 1] > arr[mid]:
+            high = mid - 1
+        # If the right neighbor is greater, move to the right half
+        else:
+            low = mid + 1
+
+    return -1  # No peak found (should not happen for valid input)
+
 # Driver code
 if __name__ == "__main__":
     arr = [1, 2, 3, 4, 5, 6, 7, 8, 5, 1]
@@ -34,8 +54,22 @@ if __name__ == "__main__":
 
     arr = [1, 2, 1, 3, 5, 6, 4]
     index = findPeakElement(arr)
+    print("The index of a peak element is:", index) # Output: 1
+
+    arr = [10, 20, 15, 2, 23, 90, 67]
+    index = findPeakElement(arr)
+    print("The index of a peak element is:", index) # Output: 1
+
+
+
+    arr = [1, 2, 3, 4, 5, 6, 7, 8, 5, 1]
+    index = findPeakbs(arr)
     print("The index of a peak element is:", index) # Output: 7
 
-    arr = [100, 20, 15, 2, 2, 1, 0]
-    index = findPeakElement(arr)
-    print("The index of a peak element is:", index) # Output: 5
+    arr = [1, 2, 1, 3, 5, 6, 4]
+    index = findPeakbs(arr)
+    print("The index of a peak element is:", index) # Output: 1
+
+    arr = [10, 20, 15, 2, 23, 90, 67]
+    index = findPeakbs(arr)
+    print("The index of a peak element is:", index) # Output: 1
