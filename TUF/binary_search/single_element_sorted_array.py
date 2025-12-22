@@ -68,3 +68,8 @@ if __name__ == "__main__":
 
     # Print the result
     print("The single element is:", ans)
+
+    arr = [1, 1, 3, 5, 5]
+    ans = obj.singleNonDuplicate(arr)
+    print("The single element is:", ans)
+    
