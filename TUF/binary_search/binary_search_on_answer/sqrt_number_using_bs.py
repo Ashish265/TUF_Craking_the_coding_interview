@@ -34,3 +34,7 @@ if __name__ == "__main__":
     n = 28
     ans = sqrt_bs(n)
     print("The square root of", n, "is:", ans)
+
+    n = 36
+    ans = sqrt_bs(n)
+    print("The square root of", n, "is:", ans)  
