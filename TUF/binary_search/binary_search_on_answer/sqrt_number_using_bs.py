@@ -17,15 +17,15 @@ def sqrt_bs(n):
     ans = 0
 
     while low <= high:
-        mide = ( low + high)//2
-        midsq = mide * mide 
+        mid = ( low + high)//2
+        midsq = mid * mid
         if midsq == n:
-            return mide
+            return mid
         elif midsq < n:
-            ans = mide
-            low = mide + 1
+            ans = mid
+            low = mid + 1
         else:
-            high = mide - 1
+            high = mid - 1
     return ans
 
 
