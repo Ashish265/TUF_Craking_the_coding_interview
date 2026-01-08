@@ -45,3 +45,7 @@ if __name__ == "__main__":
     piles = [25, 12, 8, 14, 19]
     h = 5
     print(min_eating_speed(piles, h))  # Output: 25
+
+    piles = [30, 11, 23, 4, 20]
+    h = 6
+    print(min_eating_speed(piles, h))  # Output: 23
