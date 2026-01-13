@@ -15,3 +15,56 @@ Explanation: If we want to make 3 bouquets of 2 flowers each, we need at least 6
 
 """
 
+def can_make_bouquets(arr, days, m, k):
+    bouquets = 0
+    flowers = 0
+
+    for bloom_day in arr:
+        if bloom_day <= days:
+            flowers += 1
+            if flowers == k:
+                bouquets += 1
+                flowers = 0
+        else:
+            flowers = 0
+
+    return bouquets >= m 
+
+def min_days_to_make_bouquets(arr, m, k):
+    if m * k > len(arr):
+        return -1
+
+    left, right = 1, max(arr)
+    result = -1
+
+    while left <= right:
+        mid = left + (right - left) // 2
+
+        if can_make_bouquets(arr, mid, m, k):
+            result = mid
+            right = mid - 1
+        else:
+            left = mid + 1
+
+    return result
+
+# Example usage:
+if __name__ == "__main__": 
+    arr = [7, 7, 7, 7, 13, 11, 12, 7]
+    m = 2
+    k = 3
+    print(min_days_to_make_bouquets(arr, m, k))  # Output: 12
+
+    arr = [1, 10, 3, 10, 2]
+    m = 3
+    k = 2
+    print(min_days_to_make_bouquets(arr, m, k))  # Output: -1
+
+    arr = [1, 2, 4, 9, 3, 4, 1]
+    m = 2
+    k = 3
+    print(min_days_to_make_bouquets(arr, m, k))  # Output: 4
+    arr = [5, 5, 5, 5, 5]
+    m = 1
+    k = 5
+    print(min_days_to_make_bouquets(arr, m, k))  # Output: 5
