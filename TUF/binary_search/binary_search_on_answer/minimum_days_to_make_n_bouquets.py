@@ -1,7 +1,11 @@
 """
 Docstring for TUF.binary_search.binary_search_on_answer.minimum_days_to_make_n_bouquets
 
-Problem Statement: You are given 'N’ roses and you are also given an array 'arr' where 'arr[i]' denotes that the 'ith' rose will bloom on the 'arr[i]th' day. You can only pick already bloomed roses that are adjacent to make a bouquet. You are also told that you require exactly 'k' adjacent bloomed roses to make a single bouquet. Find the minimum number of days required to make at least ‘m' bouquets each containing 'k' roses.
+Problem Statement: You are given 'N’ roses and you are also given an array 'arr' where 
+'arr[i]' denotes that the 'ith' rose will bloom on the 'arr[i]th' day. 
+You can only pick already bloomed roses that are adjacent to make a bouquet. 
+You are also told that you require exactly 'k' adjacent bloomed roses to make a single bouquet. 
+Find the minimum number of days required to make at least ‘m' bouquets each containing 'k' roses.
  Return -1 if it is not possible.
  Example 1:
 Input Format: N = 8, arr[] = {7, 7, 7, 7, 13, 11, 12, 7}, m = 2, k = 3
